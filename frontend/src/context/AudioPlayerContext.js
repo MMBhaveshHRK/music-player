@@ -11,7 +11,6 @@ export const AudioPlayerProvider = ({ children }) => {
   const [volume, setVolume] = useState(1);
   const audioRef = useRef(null);
 
-  // ✅ Fetch songs from FastAPI backend
   useEffect(() => {
     const loadSongs = async () => {
       try {
