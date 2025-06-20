@@ -1,0 +1,55 @@
+.music-page {
+  margin-left: 260px;
+  padding: 20px;
+  padding-bottom: 100px;
+  background-color: #1e1e1e;
+  min-height: 100vh;
+  color: white;
+}
+
+.heading {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.song-list {
+  list-style: none;
+  padding: 0;
+}
+
+.song-list li {
+  padding: 12px;
+  border-bottom: 1px solid #333;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.song-list li:hover {
+  background-color: #2a2a2a;
+}
+
+.song-list li.active {
+  background-color: #1db954;
+  color: black;
+  font-weight: bold;
+}
+
+.player-controls {
+  margin-top: 30px;
+}
+
+.player-controls button {
+  padding: 10px 20px;
+  background-color: #1db954;
+  border: none;
+  border-radius: 20px;
+  color: black;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.player-controls button:hover {
+  transform: scale(1.05);
+}
