@@ -5,13 +5,17 @@ from sqlmodel import SQLModel, Session, create_engine, select
 from pathlib import Path
 from models import Song
 import os
-import uvicorn 
+import uvicorn
 
 app = FastAPI()
 
+# ✅ Updated CORS settings to allow GitHub Pages
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"], 
+    allow_origins=[
+        "http://localhost:3000",
+        "https://mmbhaveshhrk.github.io"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
