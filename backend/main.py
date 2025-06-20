@@ -5,13 +5,13 @@ from sqlmodel import SQLModel, Session, create_engine, select
 from pathlib import Path
 from models import Song
 import os
-import uvicorn  # Needed for dynamic port launch
+import uvicorn 
 
 app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # You can add your Render frontend URL here too
+    allow_origins=["http://localhost:3000"], 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -33,12 +33,11 @@ def get_songs():
         return [
             {
                 "name": song.name,
-                "src": f"/music/{song.filename}"  # ✅ Relative path (will use current domain)
+                "src": f"https://music-player.onrender.com/music/{song.filename}"
             }
             for song in songs
         ]
 
-# ✅ Add this block to support Render dynamic port binding
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))
     uvicorn.run("main:app", host="0.0.0.0", port=port)
