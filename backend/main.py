@@ -35,7 +35,7 @@ def get_songs():
         return [
             {
                 "name": song.name,
-                 "src": f"https://music-player-backend-ap1x.onrender.com/music/{song.filename}"
+                "src": f"https://music-player-backend-ap1x.onrender.com/music/{song.filename}"
             }
             for song in songs
         ]
