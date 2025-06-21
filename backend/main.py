@@ -8,8 +8,6 @@ import os
 import uvicorn
 
 app = FastAPI()
-
-# ✅ Updated CORS settings to allow GitHub Pages
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[

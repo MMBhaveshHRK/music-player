@@ -11,6 +11,7 @@ export const AudioPlayerProvider = ({ children }) => {
   const [volume, setVolume] = useState(1);
   const audioRef = useRef(null);
 
+  // ✅ Fix ESLint warning by including isPlaying as dependency
   useEffect(() => {
     const loadSongs = async () => {
       try {
@@ -22,7 +23,7 @@ export const AudioPlayerProvider = ({ children }) => {
       }
     };
     loadSongs();
-  }, []);
+  }, [isPlaying]); // previously []
 
   const togglePlayPause = () => {
     if (!audioRef.current) return;
